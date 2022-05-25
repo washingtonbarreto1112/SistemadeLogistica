@@ -16,5 +16,22 @@ namespace SistemadeLogistica.view
         {
             InitializeComponent();
         }
+
+        private void cadastrarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaCadastrarProdutos telaCadastrar = new TelaCadastrarProdutos();
+            telaCadastrar.ShowDialog();
+        }
+
+        private void sairToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pesquisarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TelaPesquisarProdutos telaPesquisar = new TelaPesquisarProdutos();
+            telaPesquisar.ShowDialog();
+        }
     }
 }
