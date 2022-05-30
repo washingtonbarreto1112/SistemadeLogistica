@@ -29,29 +29,33 @@ namespace SistemadeLogistica.view
                 {
                     MessageBox.Show("Digite um codigo valido");
                     return;
+      
+                }
+                else { 
+                
+                    Produtos.CodProduto = Convert.ToInt32(tbxCodigo.Text);
+
+                   
+                }
+
+                ManipulaProdutos manipulaProdutos = new ManipulaProdutos();
+                manipulaProdutos.pesquisarCodigoProdutos();
+
+                if (Produtos.Retorno == "Sim")
+                {
+                    tbxNome.Text = Produtos.NomeProduto;
+                    tbxEmpresa.Text = Produtos.EmpresaProduto;
+                    tbxPeso.Text = Produtos.PesoProduto;
+                    tbxTamanho.Text = Produtos.TamanhoProduto;
                 }
                 else
                 {
-                    Produtos.CodProduto = Convert.ToInt32(tbxCodigo.Text);
-
-
-
                     tbxNome.Text = string.Empty;
                     tbxEmpresa.Text = string.Empty;
                     tbxPeso.Text = string.Empty;
                     tbxTamanho.Text = string.Empty;
                 }
-
-
-
-                ManipulaProdutos manipulaProdutos = new ManipulaProdutos();
-                manipulaProdutos.pesquisarCodigoProdutos();
-
-
-                tbxNome.Text = Produtos.NomeProduto;
-                tbxEmpresa.Text = Produtos.EmpresaProduto;
-                tbxPeso.Text = Produtos.PesoProduto;
-                tbxTamanho.Text = Produtos.TamanhoProduto;
+            
 
             }
             catch (Exception)
